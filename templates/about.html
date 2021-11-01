@@ -1,0 +1,56 @@
+{%load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Macos Ecommerce</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'css/style.min.css' %}" rel="stylesheet">  
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon-16x16.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico'%}">
+    <link rel="manifest" href="{%static 'site.webmanifest' %}">
+  <title> About </title>
+
+    <style type="text/css"> 
+    {% block style %} 
+    {% endblock %}
+    </style>
+</head>
+<body>
+<div class="jumbotron text-center h-100">
+  <h1 class="display-4 mt-5">About</h1>
+ 
+  <div class="card " style="width: 18rem; margin-left:43%;">
+  <img class="card-img-top rounded mx-auto d-block" src="{% static 'apple-touch-icon.png'%}" alt="Card image cap"/>
+
+  <div class="card-body">
+    <p class="card-text text-muted "> 
+  This is a Mini-project on Ecommerce developed by  Mark Owusu Ayim. 
+  Mark Owusu Ayim is a third year compter science student who loves everything related to web development
+  He also has interest in Artificial Intelligence and curently making use of some Machine Learning
+  algorithms such as Stochastic gradient descent, support vector machines, Linear regression
+  Logictic regression and ANN(Artificial Neural Network).His dream is to become an Artificial Intelligence researcher and engineer
+
+  
+  </p>
+  </div>
+ 
+  </div>
+</div>
+</body>
+
+</html>
+

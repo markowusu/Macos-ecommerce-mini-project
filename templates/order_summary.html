@@ -1,0 +1,103 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<main>
+<div class="container mt-4">
+<h2> Order Summary <h2>
+<div class="table-responsive">
+  <table class="table">
+  <thead>
+  <tr>
+  <th>#</th>
+  <th>Item title</th>
+  <th>Price</th>
+  <th>Quantity</th>
+  <th>Total Item Price</th>
+  </tr>
+  </thead>
+
+  <tbody>
+   {% for order_item in object.items.all %}
+  <tr>
+  <th scope="row">{{forloop.counter}}</th>
+  <td>{{order_item.item.title}}</td>
+   <td>
+  {% if order_item.item.discount_price %}
+
+        {{ order_item.item.discount_price}} 
+
+  {%else%}
+        {{ order_item.item.price }}
+  {% endif%}
+  </td>
+ 
+  <td>
+  <a href="{% url 'core:remove-single-item-from-cart' order_item.item.slug %}">
+  <i class="fas fa-minus mr-2 "></i>
+  </a>
+
+  {{order_item.quantity}} 
+  <a href="{% url 'core:add-to-cart' order_item.item.slug %}"><i class="fas fa-plus ml-2"></i>
+  </a>
+  </td>
+
+  <td>
+  {% if order_item.item.discount_price %}
+
+        {{ order_item.get_total_discount_price}} &nbsp; &nbsp;
+   <span >      Saved: {{order_item.get_amount_saved}}</span>
+
+  {%else%}
+        {{ order_item.get_total_item_price }}
+  {% endif%}
+
+<a href="{% url 'core:remove-from-cart' order_item.item.slug %}">
+  <i style="color:red" class="fas fa-trash mr-2 float-right"></i>
+  </a>
+
+  </td>
+    
+  </tr>
+  {% empty %}
+  <tr>
+      <td colspan="5">
+      Your cart is empty
+      </td>
+  </tr>
+  <tr colspan="5">
+   <a href="/" class="float-right ml-2"> <button type="button" class="btn  btn-primary  position-relative">
+  Continue Shopping 
+</button>
+</a>
+</tr>
+
+  {% endfor %}
+
+  {% if object.get_total_price %}
+  <tr>
+  <td colspan="4">
+ 
+<p class="fw-bolder">  <b>Order Total</b> </p>
+  </td>
+  <td>  <b>{{object.get_total_price}} </b></td>
+  </tr>
+
+  {% endif %}
+  </tbody>
+
+  </table>
+     {% comment %} <a class="btn btn-warning btn-outline-secondary btn-circle rounded-circle " href="{% url 'core:checkoutpage' %}" role="button"> Proceed to checkout</a> {% endcomment %}
+   <a href="{% url 'core:checkoutpage' %}" class="float-right"> <button type="button" class="btn  btn-warning btn-outline-secondary position-relative">
+  Checkout <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-warning ml-3 p-2"><span class="visually-hidden"></span></span>
+</button>
+</a>
+
+ <a href="/" class="float-right ml-2"> <button type="button" class="btn  btn-primary  position-relative">
+  Continue Shopping 
+</button>
+</a>
+</div>
+</div>
+</main>
+{% endblock %}
