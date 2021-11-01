@@ -111,6 +111,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
+
 STRIPE_SECRETE_KEY = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
