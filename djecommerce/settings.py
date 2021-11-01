@@ -117,3 +117,4 @@ MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)
+django_heroku.settings(locals())
