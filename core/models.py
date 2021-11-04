@@ -63,8 +63,7 @@ class Items(models.Model):
     image_url = models.URLField( max_length=200,blank=True,null=True)
     product_content = models.TextField(blank=True)
 
-    # class Meta:
-    #    ordering = ['-id']
+   
 
     def __str__(self):
         return self.title
