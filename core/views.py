@@ -42,6 +42,7 @@ class SearchResultView(ListView):
 class HomeListView(ListView):
     model = Items
     paginate_by = 8
+    ordering = ['id']
     template_name = "home-page.html"
 
 
