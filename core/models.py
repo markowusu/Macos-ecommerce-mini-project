@@ -33,7 +33,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name = ("Category")
-        verbose_name_plural = ("Categories")
+        verbose_name_plural = ("Category")
         ordering = ("-name", )
         # ordering = ['-id']
 
@@ -63,6 +63,9 @@ class Items(models.Model):
     image_url = models.URLField( max_length=200,blank=True,null=True)
     product_content = models.TextField(blank=True)
 
+    class Meta:
+        
+        verbose_name_plural = ("Items")
    
 
     def __str__(self):
@@ -147,7 +150,9 @@ class OrderItem(models.Model):
         else:
             return self.get_total_item_price()           
 
-
+    class Meta:
+        
+        verbose_name_plural = ("OrderItem")
 
 class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -160,6 +165,9 @@ class Order(models.Model):
     def __str__(self):
         return self.user.username       
 
+    class Meta:
+        
+        verbose_name_plural = ("Order")
 
     def get_total_price(self):
         total = 0
@@ -177,7 +185,9 @@ class BillingAddress(models.Model):
     def __str__(self):
         return self.user.username
 
-
+    class Meta:
+        
+        verbose_name_plural = ("BillingAddress")
 
 class Payment(models.Model):
     stripe_charge_id = models.CharField(max_length=100)
@@ -186,3 +196,7 @@ class Payment(models.Model):
     timestamp = models.DateField( auto_now=False, auto_now_add=True)
     def __str__(self):
         return self.user.username
+    class Meta:
+        
+        verbose_name_plural = ("Payment")
+     
