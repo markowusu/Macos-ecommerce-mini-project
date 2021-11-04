@@ -6,7 +6,7 @@
 
     <!--Grid row-->
         <div class="row wow fadeIn">
-
+         {% if object_list %}
             {% for item  in object_list %}
           <!--Grid column-->
           <div class="col-lg-3 col-md-4 mb-4 mt-5">
@@ -62,6 +62,16 @@
           </div>
           {% endfor %}
           <!--Grid column-->
+{% else %}
+<div class="row wow center fadeIn mt-5 ml-5 ">
+<div class="  ml-5">
+<h2>404 | Item has not yet been added to database </h2>
+</div>
+</div>
+
+{%endif %}
+
+
 
        
         </div>
