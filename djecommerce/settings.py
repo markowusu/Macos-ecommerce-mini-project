@@ -1,5 +1,5 @@
 import os
-import django_heroku
+# import django_heroku
 
 ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 
@@ -30,13 +30,13 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
      'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware'
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'djecommerce.urls'
@@ -112,12 +112,6 @@ LOGIN_REDIRECT_URL ='/'
 # ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 
 STRIPE_SECRETE_KEY = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
@@ -125,11 +119,11 @@ STRIPE_SECRETE_KEY = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 # import dj_database_url 
 # prod_db  =  dj_database_url.config(conn_max_age=500)
