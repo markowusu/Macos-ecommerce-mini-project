@@ -40,7 +40,7 @@ Install the libraries from the requirements.txt fileand start the server.
 
 ```sh
 # This the folder you will get from the cloned project
-cd django_boilerplate
+cd Macos-ecommerce-mini-project
 # Be in the /django_boilerplate folder to run the below code
 pip install requirements.txt
 #This will start the development server
