@@ -3,9 +3,9 @@
 
 > Macos ecommerce is a mini project focused on demostrating the use of frequency based storage in oprtimizing search in ecommerce platforms. This project made use of machine learning techniques such:
 
-- ######  Data preprocessing
-- ###### Data cleaning
-- ###### Data scraping
+- ######  [Data preprocessing]
+- ###### [Data cleaning]
+- ###### [Data scraping]
 - ###### data population (innoatively achieved )
 
 ## Features
@@ -97,4 +97,11 @@ MIT
    [Python]: <https://python.org/>
    [Vscode]: <https://code.visualstudio.com/>
    [Django Template]: <https://docs.djangoproject.com/en/3.2/topics/templates/>
+  [Data preprocessing]:<https://www.upgrad.com/blog/data-preprocessing-in-machine-learning/>
+  [Data Cleaning]:<https://machinelearningmastery.com/basic-data-cleaning-for-machine-learning/>
+  [Data scraping]:<https://medium.com/featurepreneur/web-scraping-for-machine-learning-made-easy-3c9f8c67cd3f/>
+  
+ 
+  
+  
   
